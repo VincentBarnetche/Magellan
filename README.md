@@ -28,7 +28,7 @@ Une résistance de pull-up d'environ 4,7kOhm devra être branchée entre
 les broches 3V3 et GND de la sonde.
 
 Au niveau de la Raspberry, pour pouvoir utiliser le bus 1-Wire :
-- activer le protocole 1-Wire : sudo raspi-config -> Interfacing Options -> 1-Wire -> Enable
-- ajouter dans le fichier /etc/modules les lignes suivantes :
+ activer le protocole 1-Wire : sudo raspi-config -> Interfacing Options -> 1-Wire -> Enable
+ ajouter dans le fichier /etc/modules les lignes suivantes :
 w1-therm
 w1-gpio pullup=1
