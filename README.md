@@ -19,6 +19,9 @@ PWD : raspberry
 Dans le but de ne plus avoir à entrer les identifiants par la suite, aller dans la page configuration :
 sudo raspi-config -> Boot Options -> Desktop / CLI -> Console Autologin
 
+La communication avec le Pixhawk nécessite de désactiver l'accès du terminal en série, mais d'activer le port série physique :
+sudo raspi-config -> Interfacing Options -> Serial -> <NO> -> <YES> -> <OK>
+
  - Sonde de Température DS18B20 :
 
 Brancher le fil rouge de la sonde sur la broche n°1 de la Raspberry (3V3),
