@@ -19,10 +19,10 @@ PWD : raspberry
 Dans le but de ne plus avoir à entrer les identifiants par la suite, aller dans la page configuration :
 sudo raspi-config -> Boot Options -> Desktop / CLI -> Console Autologin
 
+S'assurer que la date et l'heure de la Raspberry sont bonnes ($ date). Le cas échéant, la modifier.
+
 La communication avec le Pixhawk nécessite de désactiver l'accès du terminal en série, mais d'activer le port série physique :
 sudo raspi-config -> Interfacing Options -> Serial -> <NO> -> <YES> -> <OK>
-
-Au bout d'un certain temps, des données bruitées peuvent apparaître sur le MAVProxy. Interrompre le processus et relancer le MAVProxy.
 
  - Sonde de Température DS18B20 :
 
