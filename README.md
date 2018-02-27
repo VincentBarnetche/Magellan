@@ -8,7 +8,7 @@ http://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html
 
 A noter que le nom donné à MyCopter dans la ligne
 $ mavproxy.py --master=/dev/ttyAMA0 --baudrate 57600 --aircraft MyCopter
-correspondra à la variable $autopilot du script-raspi.sh.
+correspondra dans le script-raspi.sh à la variable autopilot_name.
 
 Lors de la première connexion, les identifiants de la Raspberry sont les suivants :
 (ATTENTION, les touches peuvent corespondre à un clavier QWERTY)
