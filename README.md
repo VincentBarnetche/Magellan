@@ -24,6 +24,9 @@ S'assurer que la date et l'heure de la Raspberry sont bonnes ($ date). Le cas é
 La communication avec le Pixhawk nécessite de désactiver l'accès du terminal en série, mais d'activer le port série physique :
 sudo raspi-config -> Interfacing Options -> Serial -> NO -> YES -> OK
 
+La page internet évoque la possibilité de se connecter automatiquement au Pixhawk au démarrage de la Raspberry en modifiant la fin du ficher /etc/rc.local
+A terme, le script-raspi.sh pourra y être lancé au démarrage également pour ne pas avoir besoin d'une intéraction manuelle.
+
  - Sonde de Température DS18B20 :
 
 Brancher le fil rouge de la sonde sur la broche n°1 de la Raspberry (3V3),
