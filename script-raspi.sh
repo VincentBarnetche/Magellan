@@ -11,12 +11,15 @@ path_sensor=/sys/bus/w1/devices/$sensor_id/w1_slave
 
 
 
+
 #boucle while à décommenter pour un vol
 #while [ true ]; do
 
 
 
-#pour récupérer des paramètres du Pixhawk : afficher fichier mav.parm | sélectionner lignes 2,3 (à modifier selon besoin) | remplacer un nombre indéfini d'espaces en tabulation | garder la 2e colonne | remplacer les fins de lignes par le caractère '|'
+#PARAMETRES PIXHAWK
+#afficher fichier mav.parm | sélectionner lignes 2,3 (à modifier selon besoin) | remplacer un nombre indéfini d'espaces en tabulation | garder la 2e colonne | remplacer les fins de lignes par le caractère '|'
+
 if [ -e $path_parm ]; then
 cat $path_parm | sed -n '2,3p' | sed 's/  */\t/g' | cut -f2 | tr '\n' '|' >> log.txt
 fi
@@ -28,7 +31,21 @@ fi
 
 
 
-#pour récupérer la température de la sonde DS18B20 : vérifier que la sonde est détectée
+#DONNEES DE VOL
+#Les logs télémétrie sont inutilisables sur la Raspberry puisque sans Mission Planner.
+#Donc, connecter la Raspberry au Pixhawk via le MAVProxy.
+
+#sudo mavproxy.py --master=/dev/ttyAMA0 --baudrate 57600 --aircraft Pixhawk --cmd="alt" >> log.txt
+
+#Par exemple la commande "alt" renvoie l'altitude et la pression ; isoler les valeurs dans le texte ainsi récupérer.
+#Une autre piste serait de modifier la sortie standard des fichiers python afin de rediriger les résultats des commandes MAVLink vers le fichier log.txt. 
+
+
+
+
+
+#TEMPERATE SONDE DS18B20
+#vérifier que la sonde est détectée
 if [ -e $path_sensor ]; then
 
 #vérifier que le CRC est bon
