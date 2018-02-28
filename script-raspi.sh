@@ -6,7 +6,8 @@ autopilot_name=Pixhawk
 path_dir=/home/pi/$autopilot_name/logs/$(date +%Y-%m-%d)/flight$flight_num
 path_parm=$path_dir/mav.parm
 
-path_sensor=/sys/bus/w1/devices/
+sensor_id=28-0516812abbff
+path_sensor=/sys/bus/w1/devices/$sensor_id/w1_slave
 
 #boucle while à décommenter pour un vol
 #while [ true ]; do
@@ -18,7 +19,8 @@ fi
 
 #pour récupérer la température de la sonde DS18B20
 if [ -e $path_sensor ]; then
-find $path_sensor/ -name "28-*" -exec cat {}/w1_slave \; | grep "t=" | awk -F "t=" '{print $2/1000}' >> log.txt #| sed '/YES/d' | cut -d'=' -f2 >> log
+#find $path_sensor/ -name "28-*" -exec cat {}/w1_slave \; | grep "t=" | awk -F "t=" '{print $2/1000}' >> log.txt #| sed '/YES/d' | cut -d'=' -f2 >> log
+cat $path_sensor | grep "t=" | awk -F "t=" '{print $2/1000}' >> log.txt
 fi
 
 #une fois que la copie est réussie, le répertoire du vol peut être supprimé pour libérer de l'espace. Attention toutefois à l'incrémentation de $flight_num
