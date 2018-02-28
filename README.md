@@ -22,7 +22,7 @@ sudo raspi-config -> Boot Options -> Desktop / CLI -> Console Autologin
 S'assurer que la date et l'heure de la Raspberry sont bonnes ($ date). Le cas échéant, la modifier.
 
 La communication avec le Pixhawk nécessite de désactiver l'accès du terminal en série, mais d'activer le port série physique :
-sudo raspi-config -> Interfacing Options -> Serial -> <NO> -> <YES> -> <OK>
+sudo raspi-config -> Interfacing Options -> Serial -> NO -> YES -> OK
 
  - Sonde de Température DS18B20 :
 
