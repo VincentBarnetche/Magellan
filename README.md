@@ -25,13 +25,13 @@ La communication avec le Pixhawk necessite de desactiver l'acces du login shell,
 sudo raspi-config -> Interfacing Options -> Serial -> NO -> YES -> OK
 
 La page internet evoque la possibilite de se connecter automatiquement au Pixhawk au demarrage de la Raspberry en modifiant la fin du ficher /etc/rc.local
-A terme, le script-raspi.sh pourra y etre ajouté pour etre lance au demarrage egalement, afin de ne pas avoir besoin d'interaction manuelle.
+A terme, le script-raspi.sh pourra y etre ajoute pour etre lance au demarrage egalement, afin de ne pas avoir besoin d'interaction manuelle.
 
  - Sonde de Temperature DS18B20 :
 
-Brancher le fil rouge de la sonde sur la broche n°1 de la Raspberry (3V3),
-le fil blanc du signal sur la broche n°7 (GPIO4) et le fil noir de la masse
-sur la broche n°9 (GND).
+Brancher le fil rouge de la sonde sur la broche numero 1 de la Raspberry (3V3),
+le fil blanc du signal sur la broche 7 (GPIO4) et le fil noir de la masse
+sur la broche 9 (GND).
 Une resistance de pull-up d'environ 4,7kOhm devra etre branchee entre
 les broches 3V3 et GND de la sonde.
 
