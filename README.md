@@ -30,10 +30,10 @@ A terme, le script-raspi.sh pourra y etre ajoute pour etre lance au demarrage eg
  - Sonde de Temperature DS18B20 :
 
 Brancher le fil rouge de la sonde sur la broche numero 1 de la Raspberry (3V3),
-le fil blanc du signal sur la broche 7 (GPIO4) et le fil noir de la masse
+le fil blanc du bus de données sur la broche 7 (GPIO4) et le fil noir de la masse
 sur la broche 9 (GND).
 Une resistance de pull-up d'environ 4,7kOhm devra etre branchee entre
-les broches 3V3 et GND de la sonde.
+le 3V3 et la donnée de la sonde.
 
 Au niveau de la Raspberry, pour pouvoir utiliser le bus 1-Wire, activer le protocole 1-Wire (sudo raspi-config -> Interfacing Options -> 1-Wire -> Enable) puis ajouter dans le fichier /etc/modules les lignes suivantes :
 w1-therm
